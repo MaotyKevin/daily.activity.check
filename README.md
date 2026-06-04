@@ -1,5 +1,3 @@
-# 🟩 Daily Auto Commit Bot
-
 A GitHub Actions bot that automatically commits to this repository every day to maintain a consistent contribution streak on my GitHub profile.
 
 ---
