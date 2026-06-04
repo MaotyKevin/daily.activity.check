@@ -1,0 +1,26 @@
+name: Daily Auto Commit
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Runs every day at 12:00 UTC
+  workflow_dispatch:       # Allows manual trigger from GitHub UI
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update activity log
+        run: |
+          echo "Auto-commit: $(date '+%Y-%m-%d %H:%M:%S UTC')" >> activity_log.txt
+
+      - name: Commit and push
+        run: |
+          git config user.name "YourGitHubUsername"
+          git config user.email "your@email.com"
+          git add activity_log.txt
+          git commit -m "chore: daily activity update $(date +'%Y-%m-%d')"
+          git push
