@@ -17,7 +17,7 @@ A GitHub Actions bot that automatically commits to this repository every day to 
 
 ## GitHub Actions Usage
 
-This workflow uses approximately **~62 minutes/month** out of the **2,000 free minutes** provided by GitHub — roughly 3% of the free quota.
+This workflow uses approximately **~248 minutes/month** out of the **2,000 free minutes** provided by GitHub — roughly 12% of the free quota.
 
 For public repositories, Actions minutes are **unlimited**.
 

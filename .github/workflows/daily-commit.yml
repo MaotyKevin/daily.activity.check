@@ -2,8 +2,10 @@ name: Daily Auto Commit
 
 on:
   schedule:
-    # 23:05 UTC corresponds to 02:05 AM UTC+3
-    - cron: '5 23 * * *'
+    - cron: '5 23 * * *'   # 02:05 AM UTC+3
+    - cron: '0 6 * * *'    # 09:00 AM UTC+3
+    - cron: '0 11 * * *'   # 02:00 PM UTC+3
+    - cron: '0 17 * * *'   # 08:00 PM UTC+3
   workflow_dispatch:
 
 permissions:
@@ -26,4 +28,4 @@ jobs:
           git config user.name "MaotyKevin"
           git config user.email "maotykevin@gmail.com"
           git add activity_log.txt
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: daily activity update $(date +'%Y-%m-%d')" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: daily activity update $(date +'%Y-%m-%d %H:%M')" && git push)
